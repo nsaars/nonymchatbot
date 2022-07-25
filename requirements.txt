@@ -1,5 +1,4 @@
 aiogram==2.20
-environs==8.0.0
 SQLAlchemy==1.3.24
 gino==1.0.1
-python-dotenv~=0.19.2
+boto~=2.49.0

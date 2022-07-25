@@ -1,16 +1,8 @@
-import pathlib
-from dotenv import dotenv_values
+import os
+from boto.s3.connection import S3Connection
 
-env_file = str(pathlib.Path(__file__).parent.resolve()) + r'\.env'
-config = dotenv_values(env_file)
+print(os.environ.items())
 
-IP = config['IP']
-PORT = config['PORT']
-PG_USER = config['PG_USER']
-PG_PASS = config['PG_PASS']
-DATABASE = config['DATABASE']
-BOT_TOKEN = config['BOT_TOKEN']
-ADMINS = (732928701,)
+s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
 
-POSTGRES_URI = f'postgres://{PG_USER}:{PG_PASS}@{IP}:{PORT}/{DATABASE}'
-
+print(s3)
